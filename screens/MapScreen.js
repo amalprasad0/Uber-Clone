@@ -5,7 +5,6 @@ import Map from '../components/Map'
 import { createStackNavigator } from '@react-navigation/stack';
 import NavigateCard from '../components/NavigateCard';
 import RideOptionsCard from '../components/RideOptionsCard';
-import NavFavourite from '../components/NavFavorite';
 const MapScreen = () => {
   const Stack = createStackNavigator();
   return (
