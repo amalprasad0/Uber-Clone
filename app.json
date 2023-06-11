@@ -24,8 +24,11 @@
       },
       "package": "com.amalkp141.taxibooking",
       "config": {
-        "googleMaps": { "apiKey": "AIzaSyDhIyWfb1NU_3fC0cJ5okzfnvImQb6QFnQ" }   
-     }
+        "googleMaps":
+         { 
+          "apiKey": "AIzaSyDhIyWfb1NU_3fC0cJ5okzfnvImQb6QFnQ"
+         }   
+       }
     },
     "web": {
       "favicon": "./assets/favicon.png"

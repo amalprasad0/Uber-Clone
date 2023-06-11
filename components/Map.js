@@ -9,6 +9,7 @@ import { GOOGLE_MAPS_APIKEY } from '@env'
 import { useRef } from 'react'
 import { useDispatch } from 'react-redux'
 import { setTravelTimeInformation } from '../slices/navSlice'
+import { PROVIDER_GOOGLE } from 'react-native-maps'
 
 const Map = () => {
   const origin = useSelector(selectOrigin)
@@ -46,6 +47,7 @@ const Map = () => {
         latitudeDelta: 0.005,
         longitudeDelta: 0.005,
       }}
+      provider={PROVIDER_GOOGLE}
     >
       {origin && destination && (
         <MapViewDirections

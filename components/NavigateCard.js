@@ -9,6 +9,7 @@ import { useNavigation } from '@react-navigation/native';
 import NavFavourite from './NavFavorite';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import { Icon } from 'react-native-elements/dist/icons/Icon';
+import { PROVIDER_GOOGLE } from 'react-native-maps';
 const NavigateCard = () => {
     const dispatch = useDispatch();
     const navigation = useNavigation();
@@ -20,6 +21,7 @@ const NavigateCard = () => {
                     <GooglePlacesAutocomplete
                         placeholder='Where to?'
                         styles={toInputBoxStyles}
+                        
                         onPress={(data, details = null) => {
                             // 'details' is provided when fetchDetails = true
                             dispatch(
