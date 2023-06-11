@@ -11,6 +11,8 @@ import { useDispatch } from 'react-redux'
 import { setTravelTimeInformation } from '../slices/navSlice'
 import { PROVIDER_GOOGLE } from 'react-native-maps'
 
+
+
 const Map = () => {
   const origin = useSelector(selectOrigin)
   const destination = useSelector(selectDestination)
@@ -37,58 +39,62 @@ const Map = () => {
     getTraveltime()
   }, [origin, destination, GOOGLE_MAPS_APIKEY])
   return (
-    <MapView
-      ref={mapRef}
-      style={tw`flex-1`}
-      mapType='mutedStandard'
-      initialRegion={{
-        latitude: origin.location.lat,
-        longitude: origin.location.lng,
-        latitudeDelta: 0.005,
-        longitudeDelta: 0.005,
-      }}
-      provider={PROVIDER_GOOGLE}
-    >
-      {origin && destination && (
-        <MapViewDirections
-          origin={origin.description}
-          destination={destination.description}
-          apikey={GOOGLE_MAPS_APIKEY}
-          strokeWidth={3}
-          strokeColor='black'
+    // <MapView
+    //   ref={mapRef}
+    //   // style={tw`flex-1`}
+    //   style={styles.modalStyle}
+    //   mapType='mutedStandard'
+    //   initialRegion={{
+    //     latitude: origin.location.lat,
+    //     longitude: origin.location.lng,
+    //     latitudeDelta: 0.005,
+    //     longitudeDelta: 0.005,
+    //   }}
+    //   provider={PROVIDER_GOOGLE}
 
-        />
-      )
+    // >
+    //   {origin && destination && (
+    //     <MapViewDirections
+    //       origin={origin.description}
+    //       destination={destination.description}
+    //       apikey={GOOGLE_MAPS_APIKEY}
+    //       strokeWidth={3}
+    //       strokeColor='black'
 
-      }
+    //     />
+    //   )
 
-      {origin?.location && (
-        <Marker
-          style={tw`bg-blue-400`}
-          coordinate={{
-            latitude: origin.location.lat,
-            longitude: origin.location.lng,
-          }}
-          title='Origin'
-          description={origin.description}
-          identifier='origin'
-        />
-      )
-      }
-      {destination?.location && (
-        <Marker
-          style={tw`bg-blue-400`}
-          coordinate={{
-            latitude: destination.location.lat,
-            longitude: destination.location.lng,
-          }}
-          title='Destination'
-          description={origin.description}
-          identifier='destination'
-        />
-      )
-      }
-    </MapView>
+    //   }
+
+    //   {origin?.location && (
+    //     <Marker
+    //       style={tw`bg-blue-400`}
+    //       coordinate={{
+    //         latitude: origin.location.lat,
+    //         longitude: origin.location.lng,
+    //       }}
+    //       title='Origin'
+    //       description={origin.description}
+    //       identifier='origin'
+    //     />
+    //   )
+    //   }
+    //   {destination?.location && (
+    //     <Marker
+    //       style={tw`bg-blue-400`}
+    //       coordinate={{
+    //         latitude: destination.location.lat,
+    //         longitude: destination.location.lng,
+    //       }}
+    //       title='Destination'
+    //       description={origin.description}
+    //       identifier='destination'
+    //     />
+    //   )
+    //   }
+    // </MapView>
+    <>
+    </>
   )
 }
 
